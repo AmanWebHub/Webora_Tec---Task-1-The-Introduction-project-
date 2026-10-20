@@ -10,6 +10,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -45,7 +49,6 @@ body {
   transition: color 0.3s ease;
 }
 
-
 .nav-link:hover,
 .nav-link.active {
   color: var(--primary) !important;
@@ -62,7 +65,8 @@ body {
   transition: width 0.3s ease;
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link.active::after {
   width: 100%;
 }
 
@@ -100,9 +104,8 @@ body {
   100% { transform: rotate(360deg); }
 }
 
-
 .social-links a {
-  color: #fff;              
+  color: #fff;
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -113,9 +116,203 @@ body {
   color: #fff;
   transform: translateY(-3px);
 }
+
 .scroll-down-btn {
   display: inline-block;
   margin-top: 0.5rem;
   color: #0d6efd;
   font-size: 1rem;
+}
+
+/* ---------- Section title (shared) ---------- */
+.section-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 3.5rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* ---------- About ---------- */
+#about {
+  padding: 6rem 0;
+  scroll-margin-top: 40px;  
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-image-container {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+.profile-image-container {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.profile-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.profile-image-container:hover .profile-image {
+  transform: scale(1.05);
+}
+
+.profile-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(108, 99, 255, 0.9);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.profile-image-container:hover .profile-overlay {
+  opacity: 1;
+}
+
+.overlay-content {
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+.overlay-content h5 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.profile-overlay .social-links a {
+  margin: 0 0.75rem;
+}
+
+
+.about-content {
+  padding-top: 2.5rem;
+}
+
+.about-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.about-text {
+  font-size: 1.15rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
+.about-subtitle {
+  position: relative;
+  display: block;
+  width: fit-content;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--dark);
+  padding-bottom: 0.4rem;
+  margin: 2rem 0 1rem;
+}
+
+.about-subtitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+
+.badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill-badge {
+  display: inline-block;
+  background: var(--light);
+  color: var(--dark);
+  padding: 0.5rem 1.25rem;
+  border-radius: 25px;
+  font-weight: 500;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+}
+
+.skill-badge:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+}
+
+/* Strength cards: 2 x 2 grid */
+.strength-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+
+@media (max-width: 576px) {
+  .strength-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.strength-item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem 1.25rem;
+  background: rgba(108, 99, 255, 0.06);
+  border-radius: 10px;
+  font-size: 1.05rem;
+  color: var(--dark);
+}
+
+.strength-item i {
+  width: 1.25rem;
+  text-align: center;
+  color: var(--primary);
 }

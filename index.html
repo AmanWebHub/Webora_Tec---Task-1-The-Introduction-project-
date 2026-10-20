@@ -28,7 +28,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
                 </div>
                 <div class="drawer-body">
-                    <ul class="navbar-nav  mb-2 mb-lg-0">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="#home">Home</a>
                         </li>
@@ -36,7 +36,7 @@
                             <a class="nav-link text-dark" href="#about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#skills">Skills</a>
+                            <a class="nav-link text-dark" href="#projects">Projects</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="#contact">Contact</a>
@@ -53,15 +53,81 @@
             <h1 class="display-3 fw-bold mb-4">Full Stack Developer</h1>
             <p class="lead mb-5">Building digital experiences that make an impact</p>
             <div class="social-links">
-                <a href="https://github.com/AmanWebHub?tab=repositories" class="btn  btn-lg mx-2"><i
+                <a href="https://github.com/AmanWebHub?tab=repositories" class="btn btn-lg mx-2"><i
                         class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/aman-raheem-8b813034b/" class="btn  btn-lg mx-2"><i
+                <a href="https://www.linkedin.com/in/aman-raheem-8b813034b/" class="btn btn-lg mx-2"><i
                         class="fab fa-linkedin"></i></a>
-
             </div>
             <a href="#about" class="scroll-down-btn">
                 <i class="fas fa-chevron-down"></i>
             </a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+
+            <div class="about-grid">
+                <!-- Left: photo -->
+                <div class="profile-image-container">
+                    <img src="./Assets/images/Profile.png" alt="Aman Raheem - Web Developer" class="profile-image">
+                    <div class="profile-overlay">
+                        <div class="overlay-content">
+                            <h5>Connect With Me</h5>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/aman-raheem-8b813034b/"><i
+                                        class="fab fa-linkedin"></i></a>
+                                <a href="https://github.com/AmanWebHub?tab=repositories"><i
+                                        class="fab fa-github"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: details -->
+                <div class="about-content">
+                    <h3 class="about-heading">IT Professional &amp; Web Developer</h3>
+                    <p class="about-text">
+                        With 2+ years of experience in creating dynamic web applications and solving complex
+                        technical challenges. Passionate about building digital experiences that make an impact.
+                    </p>
+
+                    <h5 class="about-subtitle">Technical Skills</h5>
+                    <div class="badge-list">
+                        <span class="skill-badge">HTML5</span>
+                        <span class="skill-badge">CSS</span>
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">React</span>
+                        <span class="skill-badge">Node.js</span>
+                        <span class="skill-badge">MongoDB</span>
+                        <span class="skill-badge">Express</span>
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">C#</span>
+                        <span class="skill-badge">SQL</span>
+                        <span class="skill-badge">Git</span>
+                        <span class="skill-badge">Bootstrap</span>
+                        <span class="skill-badge">Tailwind CSS</span>
+                    </div>
+
+                    <h5 class="about-subtitle">Strengths</h5>
+                    <div class="strength-grid">
+                        <div class="strength-item"><i class="fas fa-lightbulb"></i> Problem Solving</div>
+                        <div class="strength-item"><i class="fas fa-users"></i> Team Collaboration</div>
+                        <div class="strength-item"><i class="fas fa-diagram-project"></i> Project Management</div>
+                        <div class="strength-item"><i class="fas fa-rocket"></i> Adaptability &amp; Learning</div>
+                    </div>
+
+                    <h5 class="about-subtitle">Languages</h5>
+                    <div class="badge-list">
+                        <span class="skill-badge">English</span>
+                        <span class="skill-badge">Tamil</span>
+                        <span class="skill-badge">Sinhala</span>
+                        <span class="skill-badge">Hindi</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -70,6 +136,25 @@
         crossorigin="anonymous"></script>
 
     <script type="module" src="./Assets/js/main.js"></script>
+
+    <!-- Highlights the nav link of the section currently on screen -->
+    <script>
+        const navLinks = document.querySelectorAll("#navbar .nav-link");
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach((link) =>
+                        link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id)
+                    );
+                }
+            });
+        }, { rootMargin: "-40% 0px -55% 0px" });
+
+        navLinks.forEach((link) => {
+            const section = document.querySelector(link.getAttribute("href"));
+            if (section) observer.observe(section);
+        });
+    </script>
 </body>
 
 </html>
