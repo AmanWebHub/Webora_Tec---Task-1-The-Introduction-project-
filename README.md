@@ -1,13 +1,27 @@
-This is a demo project meant to or demonstrate my skills as a developer
-For the meber weber-tec Internship program  
+# Developer Portfolio Website — Internship Demo Project
 
+## About the Project
 
-# Technologies used 
+This project was developed as a demonstration of my frontend development skills for the **Weber-Tec Internship Program**. It showcases my ability to build and deploy websites using core web technologies.
 
-### 1 HTML
-### 2 CSS &  bootstrap 6.00 
-### 3 Javascript
-### 4 Github pages for deployment
+The website is a replica of my personal portfolio website, with selected elements modified to make it suitable for this demonstration project.
 
+## Technologies Used
 
-Side note this project is a one to one replica of my own portfolio site with some elements modified 
+- **HTML5** — Website structure and content
+- **CSS3** — Styling and layout
+- **Bootstrap** — Responsive design and UI components
+- **JavaScript** — Interactive functionality
+- **GitHub Pages** — Website hosting and deployment
+
+## Live Demo
+
+Visit the live website: **[Add your GitHub Pages URL here]**
+
+## Project Purpose
+
+The primary goal of this project is to demonstrate my practical frontend development skills, familiarity with modern web development tools, and ability to deploy a website using GitHub Pages.
+
+## Disclaimer
+
+This project is intended for demonstration and educational purposes as part of my internship application. It is based on my personal portfolio website, with selected modifications made specifically for this project.
