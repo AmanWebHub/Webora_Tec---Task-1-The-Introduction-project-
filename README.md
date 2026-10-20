@@ -4,7 +4,7 @@ For the meber weber-tec Internship program
 
 Technologies used 
 
-1 HTML
+## 1 HTML
 2 CSS &  bootstrap 6.00 
 3 Javascript
 4 Github pages for deployment
